@@ -52,7 +52,7 @@ A modern B2B beauty and fashion website built with Next.js and Tailwind CSS.
    npm install
    ```
 
-3. Copy environment variables:
+3. Copy environment variables (optional):
    ```bash
    cp ../.env.dev .env.local
    ```
@@ -62,7 +62,7 @@ A modern B2B beauty and fashion website built with Next.js and Tailwind CSS.
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000)
+5. Open [http://localhost:3000](http://localhost:3000) (or the port shown in terminal)
 
 ## Environment Variables
 
