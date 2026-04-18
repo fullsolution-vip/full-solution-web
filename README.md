@@ -87,12 +87,31 @@ Set the following in `.env.dev` and `.env.prod` as needed:
 3. Deploy automatically on push.
 
 ### GitHub Pages (Static Fallback)
-1. Build static export:
-   ```bash
-   cd frontend
-   npm run export
-   ```
-2. Deploy the `out/` folder to GitHub Pages.
+
+#### GitHub Variables Setup
+No GitHub variables are currently required for the basic GitHub Pages deployment. The GitHub Actions workflow (`/.github/workflows/deploy.yml`) handles the build and deployment automatically.
+
+However, if you add features that require external services (like email sending, analytics, or API integrations), you may need to add the following as GitHub repository secrets:
+
+- **Repository Secrets** (Settings → Secrets and variables → Actions):
+  - `SUPABASE_URL` - For Supabase integration
+  - `SUPABASE_ANON_KEY` - For Supabase client-side operations
+  - `EMAIL_API_KEY` - For email service integration
+  - `VERCEL_TOKEN` - If deploying to Vercel from GitHub Actions
+
+#### Deployment Steps
+1. Enable GitHub Pages in repository settings:
+   - Go to Settings → Pages
+   - Select "GitHub Actions" as the source
+2. Push to main branch to trigger automatic deployment
+3. Site will be available at: `https://fullsolution-vip.github.io/full-solution-web/`
+
+#### Manual Deployment (Alternative)
+```bash
+cd frontend
+npm run build
+npx gh-pages -d out
+```
 
 ## Notes
 
