@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    basePath: '/full-solution-web',
+    trailingSlash: true,
+  }),
   images: {
     domains: ['localhost', 'images.unsplash.com'],
-    unoptimized: true, // Required for static export
+    unoptimized: process.env.NODE_ENV === 'production', // Required for static export
   },
-  trailingSlash: true, // Required for static export
 }
 
 module.exports = nextConfig
