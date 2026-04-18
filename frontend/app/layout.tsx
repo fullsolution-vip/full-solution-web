@@ -44,6 +44,7 @@ export default function RootLayout({
                       width={48}
                       height={48}
                       className="rounded-full"
+                      unoptimized
                     />
                   </Link>
                   <Link href="/" className="text-xl font-bold">
