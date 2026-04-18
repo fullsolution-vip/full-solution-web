@@ -103,8 +103,14 @@ However, if you add features that require external services (like email sending,
 1. Enable GitHub Pages in repository settings:
    - Go to Settings → Pages
    - Select "GitHub Actions" as the source
-2. Push to main branch to trigger automatic deployment
+   - **Important**: Make sure Pages is enabled before pushing code
+2. The workflow will trigger on pushes to `main` or `feature/initial-setup` branches
 3. Site will be available at: `https://fullsolution-vip.github.io/full-solution-web/`
+
+#### Troubleshooting GitHub Actions
+- **"Deploy is not allowed"**: GitHub Pages must be enabled in repository settings first
+- **Workflow doesn't trigger**: Check that you're pushing to `main` or `feature/initial-setup` branch
+- **Build fails**: Ensure all dependencies are committed and `frontend/package-lock.json` exists
 
 #### Manual Deployment (Alternative)
 ```bash
